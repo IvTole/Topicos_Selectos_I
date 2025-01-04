@@ -12,4 +12,7 @@ def csv_data_path() -> Path:
     for folder in (cwd, cwd / "..", cwd / ".." / ".."):
         data_folder = folder / "data"
         if data_folder.exists() and data_folder.is_dir():
+            print("Data found in ", data_folder)
             return data_folder / "banking.csv"
+        else:
+            raise Exception("Data not found")

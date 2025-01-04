@@ -10,13 +10,11 @@ def load_data_frame(path=None, num_samples:Optional[int]=None, random_seed: int 
 
     df = pd.read_csv(filepath_or_buffer=path)
 
-    if path is None:
-        print ("Data path not specified")
-
     if num_samples is not None:
         df = df.sample(num_samples,
                        random_state=random_seed)
-        
+    print("Data is loaded")
+    
     return df
 
 
