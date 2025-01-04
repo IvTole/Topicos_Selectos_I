@@ -2,9 +2,17 @@
 
 from datetime import datetime
 
+# scikit-learn
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+
 # own external modules
 from module_data_path import csv_data_path
 from module_data_load import load_data_frame
+from module_data_preprocessing import BinaryClassifierDFPrep
+
 
 # Main function
 def main():
@@ -16,6 +24,7 @@ def main():
     df = load_data_frame(path=df_path)
 
     # input and target variables
+
     # available variables
     col_list = ['age', 'job', 'marital', 'education', 'default', 'housing',
                 'loan', 'contact', 'month', 'day_of_week', 'duration', 'campaign',
@@ -26,7 +35,10 @@ def main():
     print("Input variables: ", input_cols)
     print("Target variable: ", target_var)
 
-    print("Shape = ", df.shape)
+    X,y = BinaryClassifierDFPrep(df=df,
+                                 input_cols=input_cols,
+                                 target_var=target_var)
+    
 
 # Main Execution Block: Code that runs when the script is executed directly
 if __name__ == '__main__':
