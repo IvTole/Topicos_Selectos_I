@@ -3,8 +3,9 @@
 from datetime import datetime
 
 # scikit-learn
-from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
@@ -12,6 +13,7 @@ from sklearn.tree import DecisionTreeClassifier
 from module_data_path import csv_data_path
 from module_data_load import load_data_frame
 from module_data_preprocessing import BinaryClassifierDFPrep
+from module_model_evaluation import evaluate_model
 
 
 # Main function
@@ -35,10 +37,17 @@ def main():
     print("Input variables: ", input_cols)
     print("Target variable: ", target_var)
 
+    # Data pre processing
     X,y = BinaryClassifierDFPrep(df=df,
                                  input_cols=input_cols,
                                  target_var=target_var)
     
+    # Data split in training and test dataframes
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.3, shuffle=True)
+    print("Data splitting")
+
+    # Evaluate models
+    evaluate_model(LogisticRegression(solver='lbfgs', max_iter=2000), X_train, y_train, X_test, y_test)
 
 # Main Execution Block: Code that runs when the script is executed directly
 if __name__ == '__main__':
