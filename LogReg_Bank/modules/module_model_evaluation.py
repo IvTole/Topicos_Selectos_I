@@ -1,5 +1,15 @@
 from sklearn import metrics
+import time
 
+def model_time(func):
+    def wrapper(*args, **kwargs):
+        t1 = time.time()
+        func(*args,**kwargs)
+        t2 = time.time() - t1
+        print(f'Model took {t2} seconds')
+    return wrapper
+
+@model_time
 def evaluate_model(model, X_train, y_train, X_test, y_test):
     model.fit(X_train, y_train)
     
