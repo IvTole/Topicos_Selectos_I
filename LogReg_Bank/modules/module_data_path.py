@@ -19,10 +19,10 @@ def csv_data_path() -> Path:
         
 def model_data_path() -> Path:
     """
-    Returns the location of the Banking CSV data, allowing for script executions in subfolders without worrying about the
+    Returns the location of the Models directory, allowing for script executions in subfolders without worrying about the
     relative location of the data
 
-    :return: the path to the CSV file
+    :return: the path to the models directory
     """
     cwd = Path("..")
     for folder in (cwd, cwd / "..", cwd / ".." / ".."):
@@ -35,16 +35,32 @@ def model_data_path() -> Path:
         
 def mlruns_data_path() -> Path:
     """
-    Returns the location of the Banking CSV data, allowing for script executions in subfolders without worrying about the
+    Returns the location of the MlFlow Runs Directory, allowing for script executions in subfolders without worrying about the
     relative location of the data
 
-    :return: the path to the CSV file
+    :return: the path to the mlruns directory
     """
     cwd = Path("..")
     for folder in (cwd, cwd / "..", cwd / ".." / ".."):
         data_folder = folder / "mlruns"
         if data_folder.exists() and data_folder.is_dir():
             print("Mlruns directory found in ", data_folder)
+            return data_folder
+        else:
+            raise Exception("Data not found")
+        
+def plots_data_path() -> Path:
+    """
+    Returns the location of the Plots directory, allowing for script executions in subfolders without worrying about the
+    relative location of the data
+
+    :return: the path to the plots directory
+    """
+    cwd = Path("..")
+    for folder in (cwd, cwd / "..", cwd / ".." / ".."):
+        data_folder = folder / "plots"
+        if data_folder.exists() and data_folder.is_dir():
+            print("Plots directory found in ", data_folder)
             return data_folder
         else:
             raise Exception("Data not found")

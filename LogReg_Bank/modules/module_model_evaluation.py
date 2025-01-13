@@ -2,8 +2,9 @@ from sklearn import metrics
 import mlflow
 from mlflow.models.signature import infer_signature
 import time
+import os
 
-from module_data_path import mlruns_data_path
+from module_data_path import mlruns_data_path, plots_data_path
 
 def model_time(func):
     def wrapper(*args, **kwargs):
@@ -18,6 +19,7 @@ def model_evaluate(model, X_train, y_train, X_test, y_test):
 
     mlruns_path = mlruns_data_path()
     mlflow.set_tracking_uri(mlruns_path)
+    plots_path = plots_data_path()
 
     #create a new experiment
     experiment_name = 'LogRegWithMlflow'
@@ -43,6 +45,12 @@ def model_evaluate(model, X_train, y_train, X_test, y_test):
         accuracy = metrics.accuracy_score(y_test, y_pred)
         print(f"{model}: accuracy={accuracy:.2f} %")
         mlflow.log_metric("Accuracy", accuracy)
+
+        # Log artifacts (plots)
+        cm = metrics.confusion_matrix(y_test, y_pred)
+        disp = metrics.ConfusionMatrixDisplay(confusion_matrix=cm)
+        disp.plot().figure_.savefig(os.path.join(plots_path,'confusion_matrix.png'))
+        mlflow.log_artifact(os.path.join(plots_path,'confusion_matrix.png'))
 
         # auc score
         y_probs = model.predict_proba(X_test)[:,1]
