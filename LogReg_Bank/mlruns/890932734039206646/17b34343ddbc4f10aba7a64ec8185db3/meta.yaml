@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/17b34343ddbc4f10aba7a64ec8185db3/artifacts
+end_time: 1736733580720
+entry_point_name: ''
+experiment_id: '890932734039206646'
+lifecycle_stage: active
+run_id: 17b34343ddbc4f10aba7a64ec8185db3
+run_name: unruly-slug-767
+run_uuid: 17b34343ddbc4f10aba7a64ec8185db3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736733565100
+status: 3
+tags: []
+user_id: vanotole

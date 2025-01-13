@@ -1,0 +1,6 @@
+artifact_location: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646
+creation_time: 1736733564470
+experiment_id: '890932734039206646'
+last_update_time: 1736733564470
+lifecycle_stage: active
+name: LogRegWithMlflow

@@ -10,10 +10,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 # own external modules
-from module_data_path import csv_data_path
+from module_data_path import csv_data_path, model_data_path
 from module_data_load import load_data_frame
 from module_data_preprocessing import BinaryClassifierDFPrep
-from module_model_evaluation import evaluate_model
+from module_model_evaluation import model_evaluate
 
 
 # Main function
@@ -23,6 +23,7 @@ def main():
     print("Start date & time : ", start_datetime)
 
     df_path = csv_data_path()
+    model_path = model_data_path()
     df = load_data_frame(path=df_path)
 
     # input and target variables
@@ -47,7 +48,7 @@ def main():
     print("Data splitting")
 
     # Evaluate models
-    evaluate_model(LogisticRegression(solver='lbfgs', max_iter=2000), X_train, y_train, X_test, y_test)
+    model_evaluate(LogisticRegression(solver='lbfgs', max_iter=3000), X_train, y_train, X_test, y_test)
 
 # Main Execution Block: Code that runs when the script is executed directly
 if __name__ == '__main__':
