@@ -41,7 +41,9 @@ def main():
     # Data pre processing
     X,y = BinaryClassifierDFPrep(df=df,
                                  input_cols=input_cols,
-                                 target_var=target_var)
+                                 target_var=target_var,
+                                 treat_neg_values=False,
+                                 treat_outliers=False)
     
     # Data split in training and test dataframes
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.3, shuffle=True)
