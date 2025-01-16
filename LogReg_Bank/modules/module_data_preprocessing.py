@@ -2,7 +2,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import pandas as pd
 import numpy as np
 
-def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers=False,treat_neg_values=False):
+def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,treat_neg_values:bool=False,scaling:bool=False):
     """
     :return: a pair (X, y) where X is the data frame containing all attributes and y is the corresping series of class values
     """
@@ -34,5 +34,9 @@ def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers=False,treat_n
     # data frames containing attributes(X) and target(y)
     X = df[input_cols]
     y = df[target_var]
+
+    # Scaling data
+    scaler = StandardScaler()
+    X = scaler.fit_transform(X)
 
     return X, y
