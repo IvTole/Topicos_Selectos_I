@@ -35,8 +35,10 @@ def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,tr
     X = df[input_cols]
     y = df[target_var]
 
-    # Scaling data
-    scaler = StandardScaler()
-    X = scaler.fit_transform(X)
+    if scaling:
+        # Scaling data
+        scaler = StandardScaler()
+        X = scaler.fit_transform(X)
+        print("Data has been scaled: StandardScaler")
 
     return X, y
