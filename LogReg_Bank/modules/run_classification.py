@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.decomposition import PCA
 
 # own external modules
 from module_data_path import csv_data_path, model_data_path
@@ -44,7 +45,9 @@ def main():
                                  target_var=target_var,
                                  treat_neg_values=False,
                                  treat_outliers=False,
-                                 scaling=True)
+                                 scaling=True,
+                                 use_pca=True,
+                                 dim=1)
     
     # Data split in training and test dataframes
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.3, shuffle=True)

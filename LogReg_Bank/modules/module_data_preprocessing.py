@@ -1,8 +1,9 @@
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.decomposition import PCA
 import pandas as pd
 import numpy as np
 
-def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,treat_neg_values:bool=False,scaling:bool=False):
+def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,treat_neg_values:bool=False,scaling:bool=False, use_pca:bool=False, dim:int=1):
     """
     :return: a pair (X, y) where X is the data frame containing all attributes and y is the corresping series of class values
     """
@@ -28,6 +29,23 @@ def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,tr
         df = df.join(dummy_df)
     df.drop(categorical_data, inplace=True, axis=1)
 
+    # scaling
+    if scaling:
+        # Scaling data
+        scaler = StandardScaler()
+        X_std = scaler.fit_transform(df[numeric_data])
+        print("Data has been scaled: StandardScaler")
+        if use_pca:
+            pca = PCA(n_components=dim)
+            X_pca = pca.fit_transform(X_std)
+            df.drop([element for element in numeric_data if element!=target_var], inplace=True, axis=1)
+            df_pca_dummy = pd.DataFrame()
+            for i in range(0,X_pca.shape[1]):
+                df_pca_dummy['Component'+str(i)] = X_pca[:,i]
+            df = df.join(df_pca_dummy)
+            print(df.columns)
+        
+
     # New input cols
     input_cols = [v for v in df.columns if v!=target_var]
 
@@ -35,10 +53,7 @@ def BinaryClassifierDFPrep(df,input_cols,target_var,treat_outliers:bool=False,tr
     X = df[input_cols]
     y = df[target_var]
 
-    if scaling:
-        # Scaling data
-        scaler = StandardScaler()
-        X = scaler.fit_transform(X)
-        print("Data has been scaled: StandardScaler")
+    print(X.head())
+
 
     return X, y

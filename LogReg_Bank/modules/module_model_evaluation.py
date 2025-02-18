@@ -42,7 +42,7 @@ def model_evaluate(model, X_train, y_train, X_test, y_test):
         # Log evaluation metrics
         # accuracy score
         y_pred = model.predict(X_test)
-        accuracy = metrics.accuracy_score(y_test, y_pred)
+        accuracy = metrics.accuracy_score(y_test, y_pred)*100
         print(f"{model}: accuracy={accuracy:.2f} %")
         mlflow.log_metric("Accuracy", accuracy)
 
