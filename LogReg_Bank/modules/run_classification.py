@@ -23,7 +23,7 @@ def main():
     print("Start date & time : ", start_datetime)
 
     df_path = csv_data_path()
-    model_path = model_data_path()
+    #model_path = model_data_path()
     df = load_data_frame(path=df_path)
 
     # input and target variables
