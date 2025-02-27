@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/d26bf7bac0b9420f85081b3ea41dcd2e/artifacts
+end_time: 1739240924374
+entry_point_name: ''
+experiment_id: '890932734039206646'
+lifecycle_stage: active
+run_id: d26bf7bac0b9420f85081b3ea41dcd2e
+run_name: languid-fawn-921
+run_uuid: d26bf7bac0b9420f85081b3ea41dcd2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739240918586
+status: 3
+tags: []
+user_id: vanotole

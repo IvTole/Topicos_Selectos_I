@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/45f28ebcf89340a2af644f0ca2dcf346/artifacts
+end_time: 1740681241951
+entry_point_name: ''
+experiment_id: '890932734039206646'
+lifecycle_stage: active
+run_id: 45f28ebcf89340a2af644f0ca2dcf346
+run_name: legendary-snail-321
+run_uuid: 45f28ebcf89340a2af644f0ca2dcf346
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740681235269
+status: 3
+tags: []
+user_id: vanotole

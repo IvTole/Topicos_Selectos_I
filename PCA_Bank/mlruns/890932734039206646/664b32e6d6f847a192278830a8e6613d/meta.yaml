@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/664b32e6d6f847a192278830a8e6613d/artifacts
+end_time: 1740681307174
+entry_point_name: ''
+experiment_id: '890932734039206646'
+lifecycle_stage: active
+run_id: 664b32e6d6f847a192278830a8e6613d
+run_name: exultant-crab-29
+run_uuid: 664b32e6d6f847a192278830a8e6613d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740681303209
+status: 3
+tags: []
+user_id: vanotole

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1739248794708
+current_stage: None
+description: ''
+last_updated_timestamp: 1739248794708
+name: model1
+run_id: 361cff65791a41f3a51810d4e44c3af0
+run_link: ''
+source: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/361cff65791a41f3a51810d4e44c3af0/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/361cff65791a41f3a51810d4e44c3af0/artifacts/model
+user_id: null
+version: 1
