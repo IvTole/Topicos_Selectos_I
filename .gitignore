@@ -1,3 +1,4 @@
 **/.DS_Store
 **/__pycache__
 /LogReg_Bank/mlruns/
+/Clustering_RFM/plots/*.pdf
