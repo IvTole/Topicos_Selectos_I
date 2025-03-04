@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vanotole/Documents/Doctorado/TSI/Github/TSI_Ejercicios/LogReg_Bank/mlruns/890932734039206646/ff153031c6a943c89cb3992385e3db9e/artifacts
+end_time: 1741047719654
+entry_point_name: ''
+experiment_id: '890932734039206646'
+lifecycle_stage: active
+run_id: ff153031c6a943c89cb3992385e3db9e
+run_name: luxuriant-croc-105
+run_uuid: ff153031c6a943c89cb3992385e3db9e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741047714740
+status: 3
+tags: []
+user_id: vanotole

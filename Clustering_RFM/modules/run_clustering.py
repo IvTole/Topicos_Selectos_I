@@ -25,6 +25,7 @@ def main():
                    random_state=42, algorithm='lloyd')
     ev.evaluate_clustering(model=model)
     ev.kelbow_plot(model=model, k=(2,7))
+    #ev.silhouette_plot(model=model)
 
 
 if __name__ == '__main__':
